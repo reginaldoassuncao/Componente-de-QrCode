@@ -1,0 +1,105 @@
+/* Importar a fonte Outfit do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
+
+/* Variáveis de Cor (do style-guide.md) */
+:root {
+  --white: hsl(0, 0%, 100%);
+  --light-gray: hsl(212, 45%, 89%); /* Slate 300 */
+  --grayish-blue: hsl(220, 15%, 55%); /* Aproximado para o texto do parágrafo, style-guide menciona Slate 500 hsl(216, 15%, 48%) que é um pouco mais escuro */
+  --dark-blue: hsl(218, 44%, 22%);   /* Slate 900 */
+}
+
+/* Reset básico e estilos do corpo */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Melhora o modelo de caixa */
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--light-gray);
+  display: flex;
+  flex-direction: column; /* Para alinhar o card e a attribution */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px; /* Espaçamento para não colar nas bordas em telas pequenas */
+}
+
+main {
+  flex-grow: 1; /* Faz o main ocupar o espaço para empurrar attribution para baixo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.qr-card {
+  background-color: var(--white);
+  padding: 16px;
+  border-radius: 20px;
+  box-shadow: 0px 25px 25px rgba(0, 0, 0, 0.0476518); /* Sombra suave */
+  max-width: 320px; /* Largura máxima do cartão, como no design mobile */
+  text-align: center;
+}
+
+.qr-card img {
+  width: 100%; /* Faz a imagem ocupar toda a largura do padding do card */
+  height: auto; /* Mantém a proporção da imagem */
+  border-radius: 10px; /* Bordas arredondadas para a imagem */
+  display: block; /* Remove espaço extra abaixo da imagem */
+  margin-bottom: 24px; /* Espaço entre a imagem e o texto */
+}
+
+.qr-card-text-content {
+  padding: 0 8px; /* Pequeno padding lateral para o texto não colar nas bordas do card interno */
+}
+
+.qr-card h2 {
+  color: var(--dark-blue);
+  font-size: 22px; /* Tamanho da fonte para o título */
+  font-weight: 700;
+  line-height: 1.27; /* Altura da linha para o título (28px / 22px) */
+  margin-bottom: 16px; /* Espaço entre o título e o parágrafo */
+}
+
+.qr-card p {
+  color: var(--grayish-blue);
+  font-size: 15px; /* Tamanho da fonte para o parágrafo */
+  font-weight: 400;
+  line-height: 1.26; /* Altura da linha para o parágrafo (19px / 15px) */
+  letter-spacing: 0.1875px; /* Espaçamento entre letras */
+  margin-bottom: 24px; /* Espaço abaixo do parágrafo, antes do final do card */
+}
+
+/* Estilos da Attribution - movidos do HTML para cá */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 20px; /* Espaço acima da attribution */
+  width: 100%;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+  text-decoration: none;
+}
+
+.attribution a:hover {
+  text-decoration: underline;
+}
+
+/* Ajustes para telas um pouco maiores, se necessário,
+   mas o design é bem consistente.
+   Poderia aumentar o padding do body ou max-width do card.
+   Para este projeto, o design mobile-first já cobre bem.
+*/
+@media (min-width: 376px) {
+  /* body {
+    padding: 40px;
+  }
+  .qr-card {
+     max-width: 320px; continua o mesmo, conforme design.
+  } */
+} 
